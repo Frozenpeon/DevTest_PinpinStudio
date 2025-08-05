@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+
+
     private void Start()
     {
         if (Instance != null)
@@ -19,10 +21,6 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
     }
-
-        //MoneyManager.moneyChanged += () => { print("aaaaaa"); };
-    
-
 
     public void LaunchAGame()
     {

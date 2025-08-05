@@ -25,12 +25,19 @@ public class MoneyManager : MonoBehaviour
         actualMoney += amount;
     }
 
-    public void removeMoney(float amount)  {
-        if (amount < 0)
-        {
+    /// <summary>
+    /// Return true if the operation was a success and you tried to remove an amount lesser or equals to acutal money.
+    /// </summary>
+    /// <param name="amount"></param>
+    /// <returns></returns>
+    public bool removeMoney(float amount)  {
+        if (amount < 0) {
             Debug.LogWarning("Trying to remove a negativ amount");
-            return;
+            return false;
         }
+        if (actualMoney - amount < 0)
+            return false;
         actualMoney -= amount;
+        return true;
     }
 }
