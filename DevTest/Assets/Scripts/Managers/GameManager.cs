@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+        //MoneyManager.moneyChanged += () => { print("aaaaaa"); };
+    
+
+
     public void LaunchAGame()
     {
         
