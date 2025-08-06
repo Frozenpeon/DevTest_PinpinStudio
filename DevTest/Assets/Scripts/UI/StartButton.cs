@@ -12,4 +12,6 @@ public class StartButton : MonoBehaviour
         GameManager.Instance.LaunchAGame();
         GetComponent<Button>().interactable = false;
     }
+
+
 }
