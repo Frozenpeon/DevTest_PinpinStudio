@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
-
+    public static Action startGame;
 
     private void Start()
     {
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     public void LaunchAGame()
     {
-        
+        startGame?.Invoke();
     }
 
 
