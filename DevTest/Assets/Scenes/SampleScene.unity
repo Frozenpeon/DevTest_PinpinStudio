@@ -314,6 +314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d81ef272890db148a685fd533fc7a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minForce: 150
+  maxForce: 250
 --- !u!4 &121525589
 Transform:
   m_ObjectHideFlags: 0
@@ -341,10 +343,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de28178839c379e44b7477072cd2ad3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPosition: {x: 0, y: -25, z: 105}
+  spawnPosition: {x: 0, y: 0, z: 105}
   spawnScale: {x: 30, y: 30, z: 30}
   spawnRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
   characterList: {fileID: 11400000, guid: b8368be3eaae14b47ad03e0aad79a32e, type: 2}
+  controller: {fileID: 9100000, guid: d88b0da780bced94bb4992ed8fdcbc9d, type: 2}
 --- !u!1 &390616114
 GameObject:
   m_ObjectHideFlags: 0

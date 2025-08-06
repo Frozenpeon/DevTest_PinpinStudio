@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class CharacterManager : MonoBehaviour
@@ -8,6 +9,7 @@ public class CharacterManager : MonoBehaviour
     public Vector3 spawnScale = new Vector3(30, 30, 30);
     public Quaternion spawnRotation = Quaternion.Euler(0, 180, 0);
     public SO_CharacterList characterList;
+    public AnimatorController controller;
 
     void Start()    {
         GameManager.startGame += Spawn;
@@ -17,5 +19,6 @@ public class CharacterManager : MonoBehaviour
     {
         GameObject go = Instantiate(characterList.characters[Random.Range(0, characterList.characters.Count)], spawnPosition, spawnRotation);
         go.transform.localScale = spawnScale;
+        go.GetComponent<Animator>().runtimeAnimatorController = controller; 
     }
 }
