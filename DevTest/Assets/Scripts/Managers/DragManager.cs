@@ -14,8 +14,9 @@ public class DragManager : MonoBehaviour
             Vector3 mousePos = Input.mousePosition;
             _screenPosition = mousePos;
         }
-        else if (Input.touchCount > 0)
-            _screenPosition = Input.GetTouch(0).position;
+       // mobile input
+       // else if (Input.touchCount > 0)
+            //_screenPosition = Input.GetTouch(0).position;
 
         else
             return;

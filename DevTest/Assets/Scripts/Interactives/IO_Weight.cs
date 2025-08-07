@@ -6,13 +6,13 @@ public class IO_Weight : InteractibleObject
 {
     public int weight;
 
+
     /// <summary>
     /// We can easily add logiq here for the sounds or squash and strech
     /// </summary>
     public override void Interact()
     {
         GameManager.Instance.addWeight(weight);
-        GetComponent<Collider>().enabled = false;
     }
 
     public void setWeight(int weight)

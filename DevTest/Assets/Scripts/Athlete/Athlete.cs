@@ -18,6 +18,8 @@ public class Athlete
     public int percentagesPain = 80;
     public int actualForce { get; private set; }
 
+
+    public static Action knockOut;
     public static Action<Expressions> showedExpression;
     public void ResetInstance(int minForce, int maxForce)   {
         SetForce(minForce, maxForce);
@@ -38,7 +40,13 @@ public class Athlete
         else if (weight <= actualForce)
             return Expressions.BigStruggle;
         else
+            knockOut?.Invoke();
             return Expressions.KnockOut;
+    }
+
+    public void AddStrength(int addedForce)
+    {
+        actualForce += addedForce;
     }
 
     public Expressions testWeight(int weight)  {

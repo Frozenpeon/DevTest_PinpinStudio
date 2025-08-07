@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public static Action startGame;
-    public static Action newWeight;
+    public static Action<int> newWeight;
 
     public Vector3 leftWeightPosition;
     public Vector3 rightWeightPosition;
@@ -33,6 +33,10 @@ public class GameManager : MonoBehaviour
 
     private Athlete athlete = new Athlete();
 
+    private int betNumber;
+
+    public GameObject moneyChoice;
+
     public int actualWeight { get; private set; }
 
     private void Start()
@@ -44,10 +48,12 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
         athlete.SetForce(minForce, maxForce);
+        GaugeManager.checkPointReached += CheckPointReached;
     }
 
     public void LaunchAGame()
     {
+        betNumber = 0;
         leftWeight   = Instantiate(weightPrefab, leftWeightPosition, Quaternion.identity);
         rightWeight  = Instantiate(weightPrefab, rightWeightPosition, Quaternion.identity);
         actualWeight = 0;
@@ -65,12 +71,33 @@ public class GameManager : MonoBehaviour
         rightText.text = rightWeightWeight.ToString();
     }
 
+    public void IncreaseAthletePower(int powerGain)
+    {
+        athlete.AddStrength(powerGain);
+    }
+
+    public void CheckPointReached(int money)
+    {
+        moneyChoice.SetActive(true);
+        InteractivityManager.disableInteractivesButtons?.Invoke();
+    }
 
     public void addWeight(int addedWeight)
     {
+        betNumber += 1;
         actualWeight += addedWeight;
-        athlete.testWeight(actualWeight);
+        if (athlete.testWeight(actualWeight) == Expressions.KnockOut)
+        {
+            lostGame();
+            return;
+        }
+        CalculateWeight();
+        newWeight?.Invoke(actualWeight);
+       
     }
 
+    private void lostGame()
+    {
 
+    }
 }

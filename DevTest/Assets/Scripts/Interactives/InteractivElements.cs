@@ -12,9 +12,9 @@ public class InteractivElements : MonoBehaviour
     }
 
     public virtual void Disable() {
-      
+        GetComponent<Collider>().enabled = false;
     }
     public virtual void Enable() {
-        
+        GetComponent<Collider>().enabled = false;
     }
 }
