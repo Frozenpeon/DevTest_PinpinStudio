@@ -35,8 +35,9 @@ public class GameManager : MonoBehaviour
 
     private int betNumber;
 
-    public GameObject moneyChoice;
-
+    public GameObject moneyChoice; 
+    
+    public GameObject looseScreen;
     public int actualWeight { get; private set; }
 
     private void Start()
@@ -98,6 +99,13 @@ public class GameManager : MonoBehaviour
 
     private void lostGame()
     {
+        looseScreen.SetActive(true);
+    }
 
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
+        GaugeManager.checkPointReached -= CheckPointReached;
     }
 }

@@ -30,4 +30,9 @@ public class ExpressionShower : MonoBehaviour
         image.enabled = true;
         image.texture = mappingExpressionToSprite[e];
     }
+
+    private void OnDestroy()
+    {
+        Athlete.showedExpression -= showExpression;
+    }
 }

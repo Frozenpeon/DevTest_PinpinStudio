@@ -15,6 +15,12 @@ public class InteractivElements : MonoBehaviour
         GetComponent<Collider>().enabled = false;
     }
     public virtual void Enable() {
-        GetComponent<Collider>().enabled = false;
+        GetComponent<Collider>().enabled = true;
+    }
+
+    private void OnDestroy()
+    {
+        InteractivityManager.disableInteractivesButtons -= Disable;
+        InteractivityManager.enableInteractivesButtons -= Enable;
     }
 }

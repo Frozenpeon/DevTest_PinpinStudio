@@ -26,4 +26,10 @@ public class WeightShower : MonoBehaviour
         textHolder.text = prefix + weight.ToString();
     }
 
+    private void OnDestroy()
+    {
+        GameManager.newWeight -= changeWeight;
+        GameManager.startGame -= startShowing;
+    }
 }
+

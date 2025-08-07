@@ -13,11 +13,12 @@ public class GaugeManager : MonoBehaviour
     public List<int> checkpointValues = new List<int>();
     private int index = 0;
     private int goodGuess = 0;
-    private int wonMoney = 0;
+    public static int wonMoney {  get; private set; }
 
     private void Start()
     {
         GameManager.newWeight += weightChecked;    
+        wonMoney = 0;
     }
 
     public void weightChecked(int weight)
@@ -32,4 +33,8 @@ public class GaugeManager : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        GameManager.newWeight -= weightChecked;
+    }
 }

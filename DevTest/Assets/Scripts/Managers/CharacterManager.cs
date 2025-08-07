@@ -28,4 +28,10 @@ public class CharacterManager : MonoBehaviour
     public void PlayAnimation(Expressions expression) {
         character.GetComponent<Animator>().Play(expression.ToString());
     }
+
+    private void OnDestroy()
+    {
+        GameManager.startGame -= Spawn;
+        Athlete.showedExpression -= PlayAnimation;
+    }
 }

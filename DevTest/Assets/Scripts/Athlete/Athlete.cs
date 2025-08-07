@@ -18,6 +18,7 @@ public class Athlete
     public int percentagesPain = 80;
     public int actualForce { get; private set; }
 
+    public int bonusForce { get; private set; }
 
     public static Action knockOut;
     public static Action<Expressions> showedExpression;
@@ -29,15 +30,19 @@ public class Athlete
         actualForce = UnityEngine.Random.Range(minForce, maxForce);
     }
 
+    private int RealForce()
+    {
+        return actualForce + bonusForce;
+    }
 
     private Expressions CalculateExpression(int weight) {
-        if (weight <= actualForce / 100 * percentagesEffortless)
+        if (weight <= RealForce() / 100 * percentagesEffortless)
             return Expressions.Effortless;
-        else if (weight <= actualForce / 100 * percentagesSlightStruggle)
+        else if (weight <= RealForce() / 100 * percentagesSlightStruggle)
             return Expressions.SlightStruggle;
-        else if (weight <= actualForce / 100 * percentagesPain)
+        else if (weight <= RealForce() / 100 * percentagesPain)
             return Expressions.Pain;
-        else if (weight <= actualForce)
+        else if (weight <= RealForce())
             return Expressions.BigStruggle;
         else
             knockOut?.Invoke();
@@ -46,7 +51,7 @@ public class Athlete
 
     public void AddStrength(int addedForce)
     {
-        actualForce += addedForce;
+        bonusForce += addedForce;
     }
 
     public Expressions testWeight(int weight)  {
