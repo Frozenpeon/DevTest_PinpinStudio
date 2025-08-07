@@ -16,10 +16,9 @@ public class Athlete
     public int percentagesEffortless = 30;
     public int percentagesSlightStruggle = 50;
     public int percentagesPain = 80;
-    private int actualForce;
+    public int actualForce { get; private set; }
 
     public static Action<Expressions> showedExpression;
-
     public void ResetInstance(int minForce, int maxForce)   {
         SetForce(minForce, maxForce);
     }
