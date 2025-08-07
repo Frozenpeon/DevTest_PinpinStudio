@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,26 +18,33 @@ public class Athlete
     public int percentagesPain = 80;
     private int actualForce;
 
+    public static Action<Expressions> showedExpression;
+
     public void ResetInstance(int minForce, int maxForce)   {
         SetForce(minForce, maxForce);
     }
 
     public void SetForce(int minForce, int maxForce) { 
-        actualForce = Random.Range(minForce, maxForce);
+        actualForce = UnityEngine.Random.Range(minForce, maxForce);
     }
 
 
-    public Expressions testWeight(int weight)  {
-        if (weight <= actualForce/100 * percentagesEffortless)
+    private Expressions CalculateExpression(int weight) {
+        if (weight <= actualForce / 100 * percentagesEffortless)
             return Expressions.Effortless;
-        else if (weight <= actualForce/100 * percentagesSlightStruggle)
+        else if (weight <= actualForce / 100 * percentagesSlightStruggle)
             return Expressions.SlightStruggle;
-        else if (weight <= actualForce/100 * percentagesPain)
+        else if (weight <= actualForce / 100 * percentagesPain)
             return Expressions.Pain;
         else if (weight <= actualForce)
             return Expressions.BigStruggle;
-        else 
+        else
             return Expressions.KnockOut;
+    }
 
+    public Expressions testWeight(int weight)  {
+        Expressions e = CalculateExpression(weight);
+        showedExpression?.Invoke(e);
+        return e;
     }
 }

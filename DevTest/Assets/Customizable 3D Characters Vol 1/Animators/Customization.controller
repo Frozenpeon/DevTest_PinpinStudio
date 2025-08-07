@@ -163,7 +163,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 1_Idle1
+  m_Name: Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -221,31 +221,31 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -1729175498262286649}
-    m_Position: {x: 440, y: 90, z: 0}
+    m_Position: {x: 520, y: 70, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7684190120270756092}
-    m_Position: {x: 440, y: 130, z: 0}
+    m_Position: {x: 280, y: 150, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2249275541401281671}
-    m_Position: {x: 440, y: 170, z: 0}
+    m_Position: {x: 790, y: 90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5850711550297664588}
-    m_Position: {x: 440, y: 210, z: 0}
+    m_Position: {x: 280, y: 310, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1047556651049220698}
-    m_Position: {x: 440, y: 250, z: 0}
+    m_Position: {x: 280, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5307909991021657654}
-    m_Position: {x: 440, y: 290, z: 0}
+    m_Position: {x: 280, y: 190, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2497141408733436728}
-    m_Position: {x: 440, y: 330, z: 0}
+    m_Position: {x: 280, y: 270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5982687628076737832}
     m_Position: {x: 1030, y: 180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2104703102403791771}
-    m_Position: {x: 440, y: 370, z: 0}
+    m_Position: {x: 520, y: 440, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7551275884394643810}
     m_Position: {x: 1030, y: 220, z: 0}
@@ -270,7 +270,7 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: -140, y: 90, z: 0}
-  m_EntryPosition: {x: 190, y: 90, z: 0}
+  m_EntryPosition: {x: 160, y: 80, z: 0}
   m_ExitPosition: {x: 1040, y: 110, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -1729175498262286649}
@@ -281,7 +281,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 5_Pain
+  m_Name: Pain
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -359,7 +359,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 6_Fear2
+  m_Name: BigStruggle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -385,7 +385,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 6_Fear1
+  m_Name: SlightStruggle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -411,7 +411,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 4_Unconscious
+  m_Name: KnockOut
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -463,7 +463,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 2_Idle2
+  m_Name: Effortless
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
